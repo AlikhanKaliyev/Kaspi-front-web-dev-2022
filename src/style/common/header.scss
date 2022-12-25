@@ -1,0 +1,17 @@
+.header-nav-item:hover {
+    transition-duration: 0.4s;
+    .header-nav-item-list {
+        transition-duration: 0.4s;
+        display: block;
+    }
+
+}
+.header-box-shadow {
+    box-shadow: 0 4px 20px rgb(0 0 0 / 8%);
+}
+.header-nav-list-item {
+    box-shadow: 0 4px 20px rgb(0 0 0 / 8%);
+    li:hover {
+        color:#00000066;
+    }
+}

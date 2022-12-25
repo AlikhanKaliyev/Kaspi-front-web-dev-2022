@@ -1,0 +1,32 @@
+@keyframes scroll {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: -100%;
+    }
+  }
+  
+.animate {
+ animation: scroll 15s linear infinite;
+ &:hover{
+    animation-play-state: paused;
+}
+}
+.auto-slider-block-with-img {
+    transition: .4s;
+    button {
+        transition: .4s;
+        &:hover {
+            opacity:0.90;
+        }
+    }
+    &:hover {
+        img {
+            display: none;
+        }
+        div {
+            display: block;
+        }
+    }
+}
