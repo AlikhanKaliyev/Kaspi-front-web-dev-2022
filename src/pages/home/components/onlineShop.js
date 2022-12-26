@@ -1,7 +1,7 @@
 const OnlineShop = () => {
     return (
-        <div>
-            {/* я сделаю это */}
+        <div className="mt-[90px]">
+            
         </div>
     )    
 }
