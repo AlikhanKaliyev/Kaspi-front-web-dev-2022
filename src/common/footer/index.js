@@ -1,7 +1,8 @@
 const Footer = () => {
     return (
         // Пишите свой код здесь
-        <div>
+        <div className="footer">
+            Murager ustal
         </div>
     )
 }
