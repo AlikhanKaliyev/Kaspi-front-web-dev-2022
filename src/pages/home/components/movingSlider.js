@@ -58,7 +58,7 @@ const MovingSlider = () => {
             <h1 className="mb-[36px] text-[50px] text-center font-bold">Сервисы Kaspi.kz</h1>
             <div className=" flex items-center justify-center">
         <div className="w-[200%] h-[424px] overflow-hidden relative">
-          <div className="w-[200%] h-[424px] flex items-center justify-around absolute left-0 animate gap-5 animate">
+          <div className="w-[200%] h-[424px] flex items-center justify-around absolute z-[-1] left-0 animate gap-5 animate">
             {images.map((i) => {
               return (
                 <div className='rounded-[16px] bg-white auto-slider-item'>
