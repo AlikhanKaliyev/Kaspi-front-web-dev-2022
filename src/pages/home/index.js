@@ -8,7 +8,7 @@ const Home = () => {
         <div className="mt-[75px]">
             <Banner />
             <MovingSlider />
-            {/* <OnlineShop /> Я сделаю это  */}
+            <OnlineShop />
             <Products />    
         </div>
     )

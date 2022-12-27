@@ -4,7 +4,7 @@ import Clients from './components/clients';
 import KaspiGid from './components/KaspiGid';
 const Header = () => {
     return (
-        <div className="w-[100vw] bg-white h-[75px] flex justify-center header-box-shadow fixed top-[0px]">
+        <div className="w-[100vw] bg-white h-[75px] flex justify-center header-box-shadow fixed z-[19] top-[0px]">
             <div className="w-[1200px] py-[20px] flex">
                 <img src = {Logo} alt ='' className='h-[33px] w-[141px]'/>
                 <ul className='list-none flex text-[17px] text-[#00000066] ml-[285px]'>
