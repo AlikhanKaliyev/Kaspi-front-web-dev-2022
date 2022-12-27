@@ -10,6 +10,8 @@ import MyProfile from "./pages/cabinet/options/MyProfile";
 import Transactions from "./pages/cabinet/options/Transactions";
 import Home from './pages/home/index';
 import Shop from "./pages/shop";
+import PLP from "./pages/shop/components/plp";
+
 function App() {
   return (
     <div className="relative">
@@ -26,6 +28,7 @@ function App() {
           <Route path = 'profile' element = {<MyProfile />} />
           <Route path = 'payments' element = {<MyPayments />} />
         </Route>
+        <Route path = 'shop/plp' element = {<PLP />} />
       </Routes>
       <Footer />
     </div>
