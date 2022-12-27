@@ -32,3 +32,116 @@
 }
 
 // пишите свой код ниже 
+.partner{
+    width: 1000px;
+    margin-top: 24px;
+    border-radius: 20px;
+    justify-content: space-between;
+    display: block;
+    margin: 0 auto;
+    background-color: white;
+    padding-top: 1px;
+}
+.partner_title{
+    text-align: center;
+    font-size: 50px;
+    font-weight: 500;
+    margin-top: 30px;
+}
+.columns-partner{
+    display: flex;
+    justify-content: space-between;
+
+}
+.columns-partner-item{
+    flex-direction: column;
+    border-radius: 20px;
+    max-width: 470px;
+    margin-left: 30px;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 200;
+    background-color: rgba(0, 0, 0, 0.04);
+    padding: 30px 30px 30px 30px;
+}
+.columns-partner-item-heading{
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+    font-weight: 400;
+}
+a, a:visited, a:hover{
+    color: #0089D0;
+}
+a:active, a:hover{
+    text-decoration: underline;
+}
+.flink{
+    margin-top: 20px;
+}
+.slink{
+    margin-top: 90px;
+}
+.products{
+    width: 1000px;
+    margin-top: 24px;
+    border-radius: 20px;
+    justify-content: space-between;
+    display: block;
+    margin: 0 auto;
+    padding-top: 1px;
+    margin-bottom: 40px;
+}
+.products-title{
+    font-size: 50px;
+    font-weight: 500;
+    text-align: center;
+}
+.columns-products{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 36px;
+}
+.columns-product{
+    display: flex;
+    width: 485px;
+    background-color: white;
+    border-radius: 20px;
+    margin: 12px 0;
+    flex-direction: column;
+    padding: 20px;
+    padding-left: 30px;
+    box-sizing: border-box;
+}
+.columns-product-title{
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.6);
+    margin-top: 5px;
+}
+.columns-product-detail{
+    margin: 12px 0 24px;
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.columns-product-detail-description{
+    font-size: 24px;
+    width: 275px;
+    color: black;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.columns-product-detail-image{
+    margin-left: 50px;
+}
+.columns-product-link{
+    line-height: 24px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
