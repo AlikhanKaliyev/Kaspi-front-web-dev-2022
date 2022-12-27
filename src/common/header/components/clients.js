@@ -1,6 +1,6 @@
 const Clients = () => {
     return (
-        <div className="absolute hidden top-[30px] pt-[36px] left-[-125px] header-nav-item-list transition duration-[400ms]">
+        <div className="absolute z-[20] hidden top-[30px] pt-[36px] left-[-125px] header-nav-item-list transition duration-[400ms]">
         <div className="px-[64px] py-[36px] bg-white rounded-[16px] flex leading-[18px] header-nav-list-item">
             <ul className="w-[234.5px] text-black text-[14px]">
                 <h1 className="font-bold text-[17px] pb-[24px] leading-[1.2]">
