@@ -1,4 +1,3 @@
-import '../../../style/pages/home.scss';
 import goldLogo from '../../../assets/gold.svg';
 import RedLogo from '../../../assets/red.svg';
 import KreditLogo from '../../../assets/kredit.svg';
@@ -8,7 +7,7 @@ import KNLogo from '../../../assets/KN.svg';
 const Products = () => {
     return (
         // Пишите свой код здесь 
-        <div className="products">
+        <div className="products mt-[100px]">
             <div className="products-title">
                 Продукты Kaspi.kz
             </div>
@@ -30,7 +29,7 @@ const Products = () => {
                         </div>
                     </div>
                     <div className="columns-product-link">
-                        <a href="https://kaspi.kz/gold">Открыть Kaspi Gold онлайн</a>
+                        <a href="https://kaspi.kz/gold" className='text-[#0089D0]'>Открыть Kaspi Gold онлайн</a>
                     </div>
                 </div>
                 <div className="columns-product">
@@ -50,7 +49,7 @@ const Products = () => {
                         </div>
                     </div>
                     <div className="columns-product-link">
-                        <a href="https://kaspi.kz/kaspired">Открыть Kaspi Red онлайн</a>
+                        <a href="https://kaspi.kz/kaspired" className='text-[#0089D0]'>Открыть Kaspi Red онлайн</a>
                     </div>
                 </div>
                 <div className="columns-product">
@@ -70,7 +69,7 @@ const Products = () => {
                         </div>
                     </div>
                     <div className="columns-product-link">
-                        <a href="https://kaspi.kz/goldkid">Открыть Kaspi Gold для ребенка</a>
+                        <a href="https://kaspi.kz/goldkid" className='text-[#0089D0]'>Открыть Kaspi Gold для ребенка</a>
                     </div>
                 </div>
                 <div className="columns-product">
@@ -90,7 +89,7 @@ const Products = () => {
                         </div>
                     </div>
                     <div className="columns-product-link">
-                        <a href="https://kaspi.kz/purchase">Открыть Кредит на покупки</a>
+                        <a href="https://kaspi.kz/purchase" className='text-[#0089D0]'>Открыть Кредит на покупки</a>
                     </div>
                 </div>
                 <div className="columns-product">
@@ -110,7 +109,7 @@ const Products = () => {
                         </div>
                     </div>
                     <div className="columns-product-link">
-                        <a href="https://kaspi.kz/deposit">Открыть Kaspi Депозит</a>
+                        <a href="https://kaspi.kz/deposit" className='text-[#0089D0]'>Открыть Kaspi Депозит</a>
                     </div>
                 </div>
                 <div className="columns-product">
@@ -130,7 +129,7 @@ const Products = () => {
                         </div>
                     </div>
                     <div className="columns-product-link">
-                        <a href="https://kaspi.kz/cashkreditbiz">Открыть Кредит для ИП</a>
+                        <a href="https://kaspi.kz/cashkreditbiz" className='text-[#0089D0]'>Открыть Кредит для ИП</a>
                     </div>
                 </div>
                 <div className="columns-product">
@@ -150,7 +149,7 @@ const Products = () => {
                         </div>
                     </div>
                     <div className="columns-product-link">
-                        <a href="https://kaspi.kz/cashkredit">Получить Кредит Наличными</a>
+                        <a href="https://kaspi.kz/cashkredit" className='text-[#0089D0]'>Получить Кредит Наличными</a>
                     </div>
                 </div>
             </div>

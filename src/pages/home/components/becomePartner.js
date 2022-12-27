@@ -1,6 +1,5 @@
 import cartLogo from '../../../assets/cart.svg';
 import kaspiPayLogo from '../../../assets/kaspipay_icon.svg';
-import '../../../style/pages/home.scss';
 const BecomePartner = () => {
     return (
         // Пишите свой код здесь 
@@ -14,7 +13,7 @@ const BecomePartner = () => {
                 </div>
                 <p>Около 11 млн покупателей, 
 доставка товаров по всему Казахстану, возможность продавать в кредит и рассрочку.</p>
-                <div className='flink'><a href="https://kaspi.kz/shop/merchant/registration/#!/landing">Начать продавать в Интернет-магазине</a></div>
+                <div className='flink'><a href="https://kaspi.kz/shop/merchant/registration/#!/landing" className='text-[#0089D0]'>Начать продавать в Интернет-магазине</a></div>
             </div>
             <div className='columns-partner-item'>
                 <div className='columns-partner-item-heading'>
@@ -23,7 +22,7 @@ const BecomePartner = () => {
                 </div>
                 <p>Принимайте оплату с Kaspi Gold, Red и Kredit. Откройте счет онлайн бесплатно 
 и получите мобильный POS за 5 минут.</p>
-                <div className='slink'><a href="https://kaspi.kz/kaspipay">Начать продавать с Kaspi Pay</a></div>
+                <div className='slink'><a href="https://kaspi.kz/kaspipay" className='text-[#0089D0]'>Начать продавать с Kaspi Pay</a></div>
             </div>
         </div>
 
