@@ -23,7 +23,6 @@ const PLP = () => {
       setCategory(result.data.find((cat) => cat.id == categoryId).name)
     })
   },[])
-  console.log(category)
   
   return (
       <>
@@ -65,7 +64,9 @@ const PLP = () => {
                     <img src={item.image} />
                   </div>
                   <div className="plp__product-name">
-                    {item.name}
+                    <Link to={`/shop/pdp?prodId=${item.id}`} className='link'>
+                      {item.name}
+                    </Link>
                   </div>
                   <div className="plp__product-rating">
                     <span className={"fa fa-star star"} style={{color: item.rating >= 1 ? '#f14635' : '#999'} }></span>

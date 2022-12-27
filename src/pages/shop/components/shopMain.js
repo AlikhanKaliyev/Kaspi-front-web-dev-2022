@@ -10,7 +10,7 @@ const ShopMain = () => {
         <div className="shop__categories-blocks">
             <div className="shop__blocks-first">
                 {links1.map((link) => (
-                  <Link to={`plp?cat=${link.catId}`}>
+                  <Link to={`plp?cat=${link.catId}`} className="link">
                     <div className="shop__block-card">
                         <span>{link.title}</span>
                         <img src={link.img} />

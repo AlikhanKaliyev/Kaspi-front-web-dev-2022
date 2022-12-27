@@ -11,6 +11,7 @@ import Transactions from "./pages/cabinet/options/Transactions";
 import Home from './pages/home/index';
 import Shop from "./pages/shop";
 import PLP from "./pages/shop/components/plp";
+import PDP from "./pages/shop/components/pdp";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path = 'payments' element = {<MyPayments />} />
         </Route>
         <Route path = 'shop/plp' element = {<PLP />} />
+        <Route path = 'shop/pdp' element = {<PDP />} />
       </Routes>
       <Footer />
     </div>
