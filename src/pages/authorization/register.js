@@ -1,13 +1,14 @@
+import axios from 'axios';
 import { useState } from 'react';
 import InputMask from 'react-input-mask';
 import { useNavigate } from 'react-router-dom';
-
+import {BASE_URL} from '../../constants';
 const inputStyle = 'w-[100%] h-[35px] border-solid border-[1px] border-[#F0F0F0] pl-[10px]';
 const PhoneInput= (props) => {
     return (
         <InputMask 
         className= {inputStyle}
-          mask='+7 999 999-99-99'
+          mask='7 999 999-99-99'
           placeholder='+7 ___-___-__-__'
           maskPlaceholder={null}
           value={props.value} 
@@ -54,7 +55,7 @@ const Register = () => {
     const onSubmit = () => {
         let phoneCheck = phone.replace(/\D/g, "");
         let error = false;
-        if(username.trim() == 0) {
+        if(username.trim().length   === 0) {
             error = true;
             setUsernameError('Имя пользователя не заполнено')
         }
@@ -66,11 +67,11 @@ const Register = () => {
             error = true;
             setPhoneError('Номер заполнен не полностью');
         }
-        if(password.trim().length == 0) {
+        if(password.trim().length === 0) {
             error = true;
             setPasswordError('Пароль не заполнен');
         }
-        if(password1.trim().length == 0) {
+        if(password1.trim().length === 0) {
             error = true;
             setPassword1Error('Пароль не заполнен');
         } else if(password1 != password){
@@ -80,7 +81,22 @@ const Register = () => {
         if(error) {
             return;
         }
-        navigate('/');
+        axios.post(`${BASE_URL}/api/user/`,
+            {
+                "username":username,
+                "phone_number":phoneCheck,
+                "password":password1
+            }
+        ).then(res => {
+            navigate('/login');
+        }).catch((e) => {
+            if(e.response.data.phone_number){
+                setPhoneError('Такой номер телефона уже зарегистрирован');
+            }
+            if(e.response.data.username){
+                setUsernameError('Пользователь с таким именем уже зарегистрирован');
+            }
+        })
     }
     return (
         <div className="mt-[75px] h-[calc(100vh-75px)] flex justify-center pt-[100px]">
@@ -126,7 +142,7 @@ const Register = () => {
                 </div>
                 <div className="text-[20px] w-[75%] mt-[10px]">
                     <button className="py-[8px] text-center w-[100%] bg-[#0089D0] hover:opacity-[0.95] text-white" onClick={onSubmit}>
-                        Войти
+                        Зарегистрироваться
                     </button>
                 </div>
                 <a className='text-[15px] text-[#0089D0] mt-[5px]' onClick={ () => {navigate('/login')}}>

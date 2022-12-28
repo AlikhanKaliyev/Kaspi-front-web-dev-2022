@@ -1,13 +1,15 @@
+import axios from 'axios';
 import { useState } from 'react';
 import InputMask from 'react-input-mask';
 import { useNavigate } from 'react-router-dom';
+import { BASE_URL } from '../../constants';
 
 const inputStyle = 'w-[100%] h-[35px] border-solid border-[1px] border-[#F0F0F0] pl-[10px]';
 const PhoneInput= (props) => {
     return (
         <InputMask 
         className= {inputStyle}
-          mask='+7 999 999-99-99'
+          mask='7 999 999-99-99'
           placeholder='+7 ___-___-__-__'
           maskPlaceholder={null}
           value={props.value} 
@@ -59,13 +61,23 @@ const Register = () => {
         if(error) {
             return;
         }
-        navigate('/');
+        axios.post(`${BASE_URL}/api/login/`,{
+            "phone_number":phoneCheck,
+            "password":password
+        }).then(res => {
+            localStorage.setItem('token',res.data.access);
+            localStorage.setItem('current_user_id',res.data.user_id);
+            localStorage.setItem('current_username',res.data.user_name);
+            navigate('/cabinet');
+        }).catch((e) => {
+            setPasswordError('Неправильный номер телефона или пароль')
+        })
     }
     return (
         <div className="mt-[75px] h-[calc(100vh-75px)] flex justify-center pt-[100px]">
             <div className="w-[450px] h-[350px] bg-white border-solid border-[1px] border-[#F0F0F0] flex flex-col items-center p-[20px]">
                 <h1 className="text-[23px] leading-[1.2] font-medium mb-[20px]">
-                    Регистрация
+                    Авторизация
                 </h1>
                 <div className="w-[75%]">
                     <div className="text-[15px] leading-[1.2] font-medium mb-[10px]">

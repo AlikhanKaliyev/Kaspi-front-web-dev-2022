@@ -4,12 +4,17 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { BASE_URL } from '../../../constants'
 import '../../../style/pages/pdp.scss'
+import { comment } from 'postcss'
 
 const PDP = () => {
   const [product, setProduct] = useState([])
   const [desc, setDesc] = useState([])
   const [router] = useSearchParams()
-
+  const [comments,setComments] = useState([]);
+  const [newComment,setNewComment] = useState();
+  const onChangeNewComment = (e) => {
+      setNewComment(e.target.value);
+  }
   useEffect(() => {
     const productId = router.get('prodId')
     axios({
@@ -21,7 +26,33 @@ const PDP = () => {
       setDesc(prod.description.split(';'))
 
     })
+    getComments();
   },[])
+  const getComments = () => {
+    const productId = router.get('prodId')
+    axios.get(`${BASE_URL}/api/products/${productId}/comments/`,
+    ).then(res => {
+      setComments(res.data);
+    })
+  }
+  const addComment = () => {
+    if(newComment.trim().length === 0) {
+      return 
+    }
+    const productId = router.get('prodId');
+    let date = new Date();
+    axios.post(`${BASE_URL}/api/products/${productId}/comments/`,
+    {
+      comment:newComment,
+      date:`${date.getDate()}:${date.getMonth() + 1}:${date.getFullYear()}`,
+      product:productId,
+      user_name:localStorage.getItem('current_username')
+    }
+    ).then(res => {
+        getComments();
+        setNewComment('');
+    })
+  }
 
 
   const addToCart = () => {
@@ -68,6 +99,50 @@ const PDP = () => {
               </div>
             </div>
           </div>
+          <div>
+          </div>
+          
+        </div>
+        <div className='mt-[40px] flex justify-center'>
+            <div className='w-[950px] py-[14px] px-[20px] bg-[white] border-[1px]'>
+                  <h1 className='leading-[1.2] text-[24px] pt-[10px] pb-[20px]'>
+                    Отзывы о товаре {product.name}
+                  </h1>
+                  <div className='p-[10px]'>
+                     <h2>
+                        Добавление комментария
+                     </h2>
+                     <br />
+                     <textarea  placeholder='Содержание комментария' className='w-[500px] h-[100px] p-[10px] border-[1px]' value={newComment} onChange={onChangeNewComment}/>
+                     <br />
+                     <button className='py-[8px] px-[20px] bg-[#0089D0] text-white hover:cursor-pointer hover:opacity-[0.95]' onClick={addComment}>
+                        Опубликовать
+                     </button>
+                  </div>
+                  <div  className='h-[1px] bg-[#F0F0F0] w-[100%] mb-[14px]'/>
+                  {
+                    comments.map(comment => {
+                      return (
+                        <div className='py-[21px] min-h-[50px] flex border-b-[1px] border-[#F0F0F0]'>
+                          <div className='w-[230px]'>
+                          <div className='text-[14px]'>
+                             {comment.user_name}
+                          </div>
+                          <div className='text-[14px] text-[#CCCCCC]'>
+                              {comment.date}
+                          </div>
+                        </div>
+                        <div className='text-[14px]'>
+                          <span className='font-semibold pr-[5px]'>
+                              Комментарий:  
+                          </span>
+                              {comment.comment}
+                          </div>
+                        </div>
+                      )
+                    })
+                  }
+            </div>    
         </div>
       </>
   )

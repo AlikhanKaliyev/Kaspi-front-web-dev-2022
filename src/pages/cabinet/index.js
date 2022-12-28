@@ -1,13 +1,24 @@
 import { useEffect, useState } from "react";
 import { Outlet } from "react-router";
 import { useNavigate } from "react-router";
-
+import axios from "axios";
+axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('token')}`;
 const Cabinet = () => {
     const [currentRoute, setCurrentRoute] = useState('bank');
     const navigate = useNavigate();
     const selectCurrentRoute = (route) => {
         setCurrentRoute(route);
         navigate(`/cabinet/${route}`)
+    }
+    useEffect(()=>{
+        if(!localStorage.getItem('token') || !localStorage.getItem('current_user_id')) {
+            navigate('/login');
+        }
+    },[])
+    const leave = () => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('current_user_id');
+        navigate('/');
     }
     return (
         <div className="mt-[75px] p-[20px]">
@@ -27,11 +38,11 @@ const Cabinet = () => {
                             Мой профиль
                         </div>
                     </div>
-                    <div className="p-[20px] hover:cursor-pointer bg-white border-[1px]">
+                    <div className="p-[20px] hover:cursor-pointer bg-white border-[1px]" onClick={() => {leave()}}>
                         Выйти
                     </div>
                 </div>
-                <div className="bg-white h-[100px] border-[1px] p-[20px]">
+                <div className="bg-white h-[600px] border-[1px] p-[20px]">
                     <Outlet />
                 </div>
             </div>
