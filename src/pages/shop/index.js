@@ -1,7 +1,13 @@
+import '../../style/pages/shop.scss'
+import ShopHeader from './components/shopHeader'
+import ShopMain from './components/shopMain'
+import { Routes, Route } from "react-router-dom"
+
 const Shop = () => {
     return (
-    <div>
-        pip
+    <div className="shop">
+        <ShopHeader />
+        <ShopMain />
     </div>
     )
 }

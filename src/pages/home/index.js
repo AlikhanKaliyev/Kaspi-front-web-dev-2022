@@ -3,7 +3,8 @@ import MovingSlider from "./components/movingSlider";
 import OnlineShop from "./components/onlineShop";
 import Products from "./components/products";
 import BecomePartner from "./components/becomePartner";
-import ForBusiness from "./components/forBusiness";
+import ForBusiness from "./components/ForBusiness";
+import CabinetLink from "./components/cabinetLink";
 const Home = () => {
     return (
         <div className="mt-[75px]">
@@ -13,6 +14,7 @@ const Home = () => {
             <Products /> 
             <ForBusiness />
             <BecomePartner />
+            <CabinetLink />
         </div>
     )
 }
