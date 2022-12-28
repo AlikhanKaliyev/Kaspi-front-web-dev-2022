@@ -72,10 +72,10 @@
     font-size: 30px;
     font-weight: 400;
 }
-a, a:visited, a:hover{
+.partner a, a:visited, a:hover{
     color: #0089D0;
 }
-a:active, a:hover{
+.partner a:active, a:hover{
     text-decoration: underline;
 }
 .flink{
@@ -144,4 +144,94 @@ a:active, a:hover{
     line-height: 24px;
     font-size: 16px;
     margin-bottom: 10px;
+}
+.products a, a:visited, a:hover{
+    color: #0089D0;
+}
+.products a:active, a:hover{
+    text-decoration: underline;
+}
+.business{
+    width: 1000px;
+    display: block;
+    margin: 0 auto;
+}
+
+.business-title{
+    font-size: 50px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.business-content{
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.business-content-left{
+    width: 50%;
+    margin-right: 10px;
+    display: flex;
+}
+.business-content-mobapp{
+    background-color: white;
+    border-radius: 20px;
+    width: 100%;
+    padding: 35px 25px 35px 35px;
+    display: flex;
+    justify-content: space-between;
+}
+.business-content-mobapp-title{
+    margin-top: 20px;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 36px;
+}
+.business-content-mobapp-details{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.business-content-mobapp-details span{
+    order: 1;
+    font-size: 16px;
+}
+.business-content-mobapp-images{
+    order: 1;
+    display: flex;
+    margin-top: 10px;
+}
+.business-content-mobapp-action{
+    order: 2;
+    margin-top: 40px;
+}
+.business-content-mobapp-action h3{
+    color: white;
+    font-size: 16px;
+    text-align: center;
+}
+.business-content-mobapp-button{
+    display: block;
+    width: 166px;
+    height: 48px;
+    background: #0089D0;
+    border-radius: 8px;
+    font-size: 20px;
+    line-height: 44px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+.business-content-mobapp-image img{
+    max-width: 205px;
+}
+
+.business-content-right{
+    width: 50%;
+    display: flex;
+}
+.business-content-product-item:first-child{
+    margin-top: 0;
+    margin-bottom: 20px;
 }
