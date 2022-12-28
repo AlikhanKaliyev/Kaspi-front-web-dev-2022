@@ -235,3 +235,53 @@
     margin-top: 0;
     margin-bottom: 20px;
 }
+
+.paymentKaspi{
+    width: 1000px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 40px 50px;
+    border-radius: 20px;
+    background-color: white;
+    margin-bottom: 30px;
+}
+.paymentTitle{
+    margin-top: 30px;
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 54px;
+    text-align: center;
+}
+.paymentTypes{
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+.paymentType{
+    text-align: center;
+    font-size: 30px;
+    line-height: 30px;
+}
+.paymentType img{
+    max-width: 266px;
+}
+
+.paymentType span{
+    display: block;
+    margin-top: 20px;
+}
+.payment-action{
+    margin-top: 40px;
+    text-align: center;
+}
+.payment-action a:visited{
+    color:#0089D0;
+}
+.payment-action a{
+    font-size: 20px;
+    line-height: 24px;
+}
+.payment-action a:active, a:hover{
+    text-decoration: underline;
+}

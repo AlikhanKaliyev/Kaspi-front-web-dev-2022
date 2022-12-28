@@ -5,6 +5,7 @@ import Products from "./components/products";
 import BecomePartner from "./components/becomePartner";
 import ForBusiness from "./components/forBusiness";
 import CabinetLink from "./components/cabinetLink";
+import PaymentWithKaspi from "./components/paymentWithKaspi";
 const Home = () => {
     return (
         <div className="mt-[75px]">
@@ -13,6 +14,7 @@ const Home = () => {
             <OnlineShop />
             <Products /> 
             <ForBusiness />
+            <PaymentWithKaspi />
             <BecomePartner />
             <CabinetLink />
         </div>
